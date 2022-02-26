@@ -40,9 +40,7 @@ else:
 sentence_lines = sentence_lines[:-1]
 sentence_lines += "."
 print("\n\n",sentence_lines)
-file_name = "pdf_output.txt"
-with open(file_name,"w",encoding='utf-8') as fout:
-    fout.write(sentence_lines)
+
 
 
 
@@ -85,5 +83,12 @@ def baidu_translation(content):
         if httpClient:
             httpClient.close()
 
+
 res = baidu_translation(sentence_lines)
 print(res,"\n\n")
+
+file_name = "pdf_output.txt"
+with open(file_name,"w",encoding='utf-8') as fout:
+    fout.write(sentence_lines)
+    fout.write("\n")
+    fout.write(res)
